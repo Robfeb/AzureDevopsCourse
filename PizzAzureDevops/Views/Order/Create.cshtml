@@ -1,0 +1,18 @@
+@model PizzAzureDevops.Models.Order
+
+<h2>Order @Model.Pizza.Name</h2>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="CustomerName" class="control-label"></label>
+        <input asp-for="CustomerName" class="form-control" />
+        <span asp-validation-for="CustomerName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Quantity" class="control-label"></label>
+        <input asp-for="Quantity" class="form-control" />
+        <span asp-validation-for="Quantity" class="text-danger"></span>
+    </div>
+    <input type="hidden" asp-for="PizzaId" />
+    <button type="submit" class="btn btn-primary">Submit Order</button>
+</form>
